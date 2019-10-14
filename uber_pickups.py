@@ -37,9 +37,9 @@ filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
 st.subheader('Map of all pickups at %s:00' % hour_to_filter)
 st.map(filtered_data)
 
-st.write(data['lat'].max())
 lat_min = data['lat'].min()
 lat_max = data['lat'].max()
+st.write('Latitudes : \[', lat_min, ', ', lat_max, '\]')
 
 latitude_filter = st.slider('Latitude minimale', lat_min, lat_max)
 st.subheader('Map of pickups above latitude %s' % latitude_filter)
